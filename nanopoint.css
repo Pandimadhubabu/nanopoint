@@ -1,0 +1,58 @@
+/* Common */
+/* ------------------------------ */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { -webkit-font-smoothing: antialiased; overflow: hidden; background: #212121; font: 4.2vmin/1.5 sans-serif; color: #FAFAFA; }
+
+
+
+/* Slide containers */
+/* ------------------------------ */
+.slide {
+    position: fixed; top: 0; left: 0;
+    width: 100vw; height: 100vh; overflow: auto;
+    background: #212121;
+    text-align: center; line-height: 100vh;
+}
+.slide > * { text-align: left; line-height: 1.5; }
+.slide-wrap {
+    display: inline-block; vertical-align: middle;
+    width: 33em; max-width: 80%; margin-top: -1.5em; padding: 1.5em;
+}
+
+
+
+/* Slider controls */
+/* ------------------------------ */
+.slide-number {
+    position: absolute; bottom: 2em; right: 2em; z-index: 1000;
+    padding: .25em .75em;
+    background: rgba(255,255,255,.1);
+    white-space: nowrap;
+    text-align: center; text-decoration: none;
+    font-weight: bold; font-size: .875em;
+    color: rgba(255,255,255,.6);
+    transition: background .3s, color .3s;
+}
+a.slide-number:hover { background: rgba(255,255,255,.3); color: rgba(255,255,255,.8); }
+.slide-control { position: absolute; top: 0; bottom: 0; z-index: 900; width: 8%; background: #FFF; opacity: 0; transition: opacity .1s; }
+a.slide-control:active { opacity: .1; }
+.slide-prev { left: 0; }
+.slide-next { right: 0; }
+
+
+
+/* Slider mechanism */
+/* ------------------------------ */
+/* past slides state */
+.slide { box-shadow: inset 0 0 0 10000px rgba(0,0,0,.3); transition: transform .5s, background .3s, box-shadow .3s; transform: translate3d(0,0,0); }
+.slide-wrap { opacity: 0; transition: transform .6s .1s, opacity .5s .1s; transform: translate3d(-20%,0,0) scale(.98); }
+
+/* future slides state */
+.slide:target,
+.slide:target ~ .slide { transform: translate3d(100%,0,0); }
+.slide:target .slide-wrap,
+.slide:target ~ .slide .slide-wrap { transition: transform .5s, opacity .6s .1s; transform: translate3d(-80%,0,0); }
+
+/* current slide state */
+.slide:target { transform: translate3d(0,0,0); box-shadow: inset 0 0 0 10000px rgba(0,0,0,0); }
+.slide:target .slide-wrap { opacity: 1; transform: translate3d(0,0,0); }

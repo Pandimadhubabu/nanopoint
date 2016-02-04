@@ -1,0 +1,76 @@
+<!-- NanoPoint by Nicolas Torres (MIT license): https://github.com/noclat/nanopoint -->
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>NanoPoint</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<link rel="stylesheet" href="http://noclat.github.io/nanopoint/nanopoint.css">
+<script src="http://noclat.github.io/nanopoint/nanopoint.js"></script>
+<!-- It's first meant to be used on your computer, feel free to add metas if it goes public -->
+
+
+
+<!-- CUSTOM STYLES -->
+<link href='http://fonts.googleapis.com/css?family=Raleway:800|Lato:400,400italic,900' rel='stylesheet' type='text/css'>
+<style>
+/* global style */
+body { font-family: 'Lato', sans-serif; }
+h1 { font: 900 2.25em/1.333 'Raleway', sans-serif; text-shadow: 0 .05em 0 rgba(0,0,0,.1); }
+ul { list-style: circle; }
+small { font-size: .875em; opacity: .6; }
+
+/*
+Custom slide style:
+selectors:
+    #SLIDE_ID // matches the container
+    #SLIDE_ID:target ~ .slide-number // matches the slide number
+    #SLIDE_ID:target ~ .slide-number // matches the slide controls (on the left & right of the screen, only visible on click)
+
+uncomment below to apply style on slide 2
+*/
+/*
+#slide-2 { background: #FAFAFA; color: #212121; }
+#slide-2 h1 { text-shadow: 0 .05em 0 rgba(255,255,255,.2); }
+#slide-2:target ~ .slide-number { background: rgba(0,0,0,.1); color: rgba(0,0,0,.6); }
+#slide-2:target ~ .slide-control { background: #000; }
+*/
+</style>
+
+
+
+<!--
+PRESENTATION STARTS
+-->
+
+<!-- SLIDE 1 -->
+<section class="slide" id="slide-1">
+    <article class="slide-wrap">
+        <div class="slide-text">
+            <h1>Slide 1</h1>
+            <p>Fill slide 1 with some text.</p>
+        </div>
+    </article>
+</section>
+
+<!-- SLIDE 2 -->
+<section class="slide" id="slide-2">
+    <article class="slide-wrap">
+        <div class="slide-text">
+            <h1>Slide 2</h1>
+            <p>Fill slide 2 with some text.</p>
+        </div>
+    </article>
+</section>
+
+<!-- SLIDE x: duplicate the slides above as much as you need -->
+
+<!--
+PRESENTATION ENDS
+-->
+
+
+
+<!-- SLIDE CONTROLS (important to keep them after the slides in order to match them with CSS selectors) -->
+<span class="slide-number" id="slide-number"></span>
+<a href="#" class="slide-control slide-prev" id="slide-prev"></a>
+<a href="#" class="slide-control slide-next" id="slide-next"></a>
