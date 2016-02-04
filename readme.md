@@ -18,16 +18,22 @@ Centering the text involves `.slide` to have a child element `.slide-wrap`. To s
 ```css
 .slide {
     /* … */
-    text-align: center; line-height: 100vh;
+    text-align: center; /* center children horizontally */
+    line-height: 100vh; /* center children vetically */
 }
 ```
 
 And to cancel the inheriting effect, we add:
 
 ```css
-.slide > * {
+.slide > * { /* reset text-align & line-height inside children */
     /* … */
-    text-align: left; line-height: 1.5;
+    text-align: left; 
+    line-height: 1.5;
+}
+.slide-wrap {
+    display: inline-block; /* parent's text-align & line-height properties have effect on it */
+    /* … */
 }
 ```
 
@@ -36,7 +42,6 @@ There are other default style applying to `.slide-wrap` making their transition 
 Besides those properties that were worth noting, conflicts may not happen. You can easily customize what's inside the slides.
 
 **So basically it's just HTML & CSS, do what you want.**
-
 
 ## 3. Working offline
 Simply download `nanopoint.css` and `nanopoint.js`, and make sure the URLs in your html file are pointing to them. Make sure your web-fonts are installed on your computer.
