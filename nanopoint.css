@@ -44,8 +44,8 @@ a.slide-control:active { opacity: .1; }
 /* Slider mechanism */
 /* ------------------------------ */
 /* past slides state */
-.slide { box-shadow: inset 0 0 0 10000px rgba(0,0,0,.3); transition: transform .5s, background .3s, box-shadow .3s; transform: translate3d(0,0,0); }
-.slide-wrap { opacity: 0; transition: transform .6s .1s, opacity .5s .1s; transform: translate3d(-20%,0,0) scale(.98); }
+.slide { box-shadow: inset 0 0 0 10000px rgba(0,0,0,.3); transition: transform .5s, background .3s, box-shadow .3s; transform: translate3d(-10%,0,0); }
+.slide-wrap { opacity: 0; transition: transform .6s .1s, opacity .5s .1s; transform: translate3d(-10%,0,0) scale(.98); }
 
 /* future slides state */
 .slide:target,
