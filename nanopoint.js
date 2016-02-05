@@ -31,10 +31,7 @@ window.addEventListener('load', function() {
 
     // keyboard controls
     document.addEventListener('keydown', function(e) {
-        if ([37,38].indexOf(e.which) > -1) { // Left & bottom arrows for previous
-            prev(e);
-        } else if ([32,39,40].indexOf(e.which) > -1) { // Spacebar + right & top arrows for next
-            next(e);
-        }
+        if ([37,38].indexOf(e.which) > -1) prev(e); // Left & bottom arrows for previous
+        else if ([32,39,40].indexOf(e.which) > -1) next(e) // Spacebar + right & top arrows for next
     });
 });
