@@ -29,9 +29,14 @@ window.addEventListener('load', function() {
     document.getElementById('slide-prev').addEventListener('click', prev);
     document.getElementById('slide-next').addEventListener('click', next);
 
+    // scroll current element
+    var scroll = function(m) { document.querySelector('#'+slides[index()].id).scrollTop += (m || 1)*100; }
+
     // keyboard controls
     document.addEventListener('keydown', function(e) {
-        if ([37,38].indexOf(e.which) > -1) prev(e); // Left & bottom arrows for previous
-        else if ([32,39,40].indexOf(e.which) > -1) next(e) // Spacebar + right & top arrows for next
+        if (e.which === 37) prev(e); // Left arrow for previous
+        else if ([32,39].indexOf(e.which) > -1) next(e); // Spacebar & right arrow for next
+        else if (e.which === 38) scroll(-1); // Top arrow for scrolling up
+        else if (e.which === 40) scroll(); // Bottom arrow for scrolling down
     });
 });
